@@ -32,4 +32,9 @@ public class Login_stepDefs {
     public void theUserEntersJhonNashCredentials() {
         System.out.println("I enter Jhon Nash username and password and click login button");
     }
+
+    @When("The user enters Rosa credentials")
+    public void theUserEntersRosaCredentials() {
+        System.out.println("I enter Rosa username and password and click login button");
+    }
 }
