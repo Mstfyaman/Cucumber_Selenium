@@ -23,7 +23,7 @@ public class Login_StepDefs {
 
         System.out.println("Batch 2 was here");
         System.out.println("O open the browser and navigate to Krafttech web page");
-
+        Driver.get().get(ConfigurationReader.get("url"));
     }
     @When("The user enters Mike credentials")
     public void the_user_enters_mike_credentials() {
@@ -51,10 +51,10 @@ public class Login_StepDefs {
     }
 
     //---------wip
-    @Given("User should be on the login page")
-    public void user_should_be_on_the_login_page() {
-        Driver.get().get(ConfigurationReader.get("url"));
-    }
+//    @Given("User should be on the login page")
+//    public void user_should_be_on_the_login_page() {
+//
+//    }
     @When("User should input login information")
     public void user_should_input_login_information() {
         loginPages.loginUser();

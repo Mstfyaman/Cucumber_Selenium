@@ -58,6 +58,16 @@ public class ProfilePage extends BasePage{
 
     }
 
+    public void profileTabs2(String tabName){
+        //  driver= Driver.get();
+        String tablocator= "//span[.='"+tabName+"']";
+
+        BrowserUtils.waitForClickablility(By.xpath(tablocator),5);
+        WebElement tabElement= driver.findElement(By.xpath(tablocator));
+        tabElement.click();
+
+    }
+
 
     @FindBy(xpath = "//input[@placeholder='Job Title *']")
     public WebElement jobTitle;

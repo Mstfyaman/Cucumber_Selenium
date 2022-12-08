@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(             // runner class ı ve features arasındaki bağlantıyı kurar
 
         plugin = {"json:target/cucumber.json", // burası rapor almamızı sağlamak için
-        "html:target/default-html-reports"}, // bu satır html raporu verir. ancak bende version probleminden dolayı çalışmadı. asıl kullanılan üstteki rapor yöntemi
+        "html:target/default-html-reports.html"}, // bu satır html raporu verir. ancak bende version probleminden dolayı çalışmadı. asıl kullanılan üstteki rapor yöntemi
 
         features = "src/test/resources/features",    // features packagesinin path ini aldık.
         glue = "com/krafttech/stept_definitions", // runner class ile step_definitions arasındaki bağlantığı kuruyoruz

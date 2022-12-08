@@ -4,6 +4,9 @@ import com.krafttech.pages.DashboardPage;
 import com.krafttech.pages.LoginPages;
 import com.krafttech.pages.ProfilePage;
 import com.krafttech.utilities.BrowserUtils;
+import com.krafttech.utilities.ConfigurationReader;
+import com.krafttech.utilities.Driver;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.bouncycastle.est.LimitedSource;
@@ -68,12 +71,14 @@ public class Profile_StepDefs {
         // bunu bizim profile.feature ye belirlediğim listlerden alıyor. = 4
 
         System.out.println("actualOptions = " + actualOptions);
-        System.out.println("profileOptions = " + Options);
+        System.out.println("Options = " + Options);
         Assert.assertEquals(Options,actualOptions);
 
     }
 
 
-
-
+    @Given("User should be on the login page")
+    public void userShouldBeOnTheLoginPage() {
+        Driver.get().get(ConfigurationReader.get("url"));
+    }
 }

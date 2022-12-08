@@ -15,6 +15,13 @@ public abstract class BasePage {
         driver= Driver.get();
     }
 
+    public void naviagateToTab2(String tabName){
+        driver=Driver.get();
+        driver.findElement(By.xpath("//nav//span[.='"+tabName+"']")).click();
+
+
+    }
+
     public void navigateToModule(String tab, String module){
 
         String tabLocator= "//li[@class='nav-item']//span[.='"+tab+"']";
