@@ -1,6 +1,8 @@
 package com.krafttech.pages;
 
 import com.krafttech.utilities.ConfigurationReader;
+import com.krafttech.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -32,13 +34,15 @@ public class LoginPages extends BasePage{
         loginButton_loc.click();
     }
 
-
     public void loginWithParameter (String email, String password){
-
 
         userEmailInput_loc.sendKeys(email);
         passwordInput_loc.sendKeys(password);
         loginButton_loc.click();
+    }
+
+    public String getWarningMessageText(String message){
+      return   Driver.get().findElement(By.xpath("//*[contains(text(),'"+message+"')]")).getText();
     }
 
 

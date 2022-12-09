@@ -25,11 +25,13 @@ public class Login_StepDefs {
         System.out.println("O open the browser and navigate to Krafttech web page");
         Driver.get().get(ConfigurationReader.get("url"));
     }
+
     @When("The user enters Mike credentials")
     public void the_user_enters_mike_credentials() {
         System.out.println("I enter Mike username and password and click login button");
 
     }
+
     @Then("The user should be able to login")
     public void the_user_shoult_be_able_to_login() {
         System.out.println("I verify that url changed Dashboard page");
@@ -59,24 +61,25 @@ public class Login_StepDefs {
     public void user_should_input_login_information() {
         loginPages.loginUser();
     }
+
     @Then("User should be on home page")
     public void user_should_be_on_home_page() {
         BrowserUtils.waitFor(3);
-        String actualTitle= Driver.get().getTitle();
+        String actualTitle = Driver.get().getTitle();
         System.out.println("actualTitle = " + actualTitle);
-        String exceptedTitle ="Dashboard - Kraft Techex Lab - aFm";
-        Assert.assertEquals(exceptedTitle,actualTitle);  // testNg de excepted önce gelir
+        String exceptedTitle = "Dashboard - Kraft Techex Lab - aFm";
+        Assert.assertEquals(exceptedTitle, actualTitle);  // testNg de excepted önce gelir
     }
 
     @When("User should input {string} and {string}")
     public void userShouldInputAnd(String email, String password) {
-        loginPages.loginWithParameter(email,password);
+        loginPages.loginWithParameter(email, password);
     }
 
     @Then("User should input following credentials")
-    public void user_should_input_following_credentials(Map<String,String> userInfo) {
+    public void user_should_input_following_credentials(Map<String, String> userInfo) {
 
-       loginPages.loginWithParameter(userInfo.get("email"),userInfo.get("password"));
+        loginPages.loginWithParameter(userInfo.get("email"), userInfo.get("password"));
         // nereden çektiğimize dikkat et. login.feature deki keyleri yazdık.
 
         String actualName = dashboardPage.getUserName();
@@ -84,11 +87,17 @@ public class Login_StepDefs {
 
         System.out.println("actualName = " + actualName);
         System.out.println("exceptedName = " + exceptedName);
-        Assert.assertEquals(exceptedName,actualName);
+        Assert.assertEquals(exceptedName, actualName);
     }
 
 
+    @Then("The warning message contains {string}")
+    public void the_warning_message_contains(String expectedWarningMessage) {
 
+        BrowserUtils.waitFor(1);
+        String actualWarningMessage = loginPages.getWarningMessageText(expectedWarningMessage);
+            Assert.assertEquals(expectedWarningMessage,actualWarningMessage);
+    }
 
 
 }
