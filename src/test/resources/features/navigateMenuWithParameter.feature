@@ -13,7 +13,7 @@ Feature: Navigate to menu with parameter
     When User should input "eddiem@kraft.com" and "eddiem12"
     Then The user name should be "Eddie Murphy"
     When The user navigates to "Developers" menu
-    Then The user should be able to see home name as "Developers4"
+    Then The user should be able to see home name as "Developers"
 
   @rerun
   Scenario: Morgan Freeman navigates to Dashboard menu

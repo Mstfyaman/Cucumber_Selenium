@@ -14,7 +14,7 @@ public class Hooks {
     @Before // before u seçerken cucumber.java dan gelmesine dikkat edelim! // // her testten önce çalışır
     public void setUP(){
         System.out.println("\tThis is coming from Before Method");
-        Driver.get().manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        Driver.get().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         Driver.get().manage().window().maximize();
     }
 
