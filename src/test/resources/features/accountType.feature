@@ -6,7 +6,7 @@ Feature: Account Type
     Given User should be on the login page
     When User should input "Mustafa@gmail.com" and "123456789"
     Then The user name should be "Mustafa"
-
+  @parallel
   Scenario: Second user
     Given User should be on the login page
     When User should input "eddiem@kraft.com" and "eddiem12"

@@ -15,7 +15,7 @@ Feature: Navigate to menu with parameter
     When The user navigates to "Developers" menu
     Then The user should be able to see home name as "Developers"
 
-  @rerun
+  @rerun @parallel
   Scenario: Morgan Freeman navigates to Dashboard menu
     Given User should be on the login page
     When User should input "morganfreeman@kraft.com" and "mfreeman"

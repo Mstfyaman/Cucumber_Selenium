@@ -4,7 +4,7 @@
     Background:
       Given User should be on the login page
 
-
+    @parallel
     Scenario: User should be able to edit profile
       When User should input login information
       And User should go to My profile
