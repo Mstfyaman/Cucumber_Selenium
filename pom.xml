@@ -59,6 +59,13 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M6</version>
                     <configuration>
+
+
+                        <parallel>methods</parallel>
+                        <useUnlimitedThreads>true</useUnlimitedThreads>
+                        <!-- Burası Parallel Test için yazıldı. 14.12.2022 -->
+
+
                         <testFailureIgnore>true</testFailureIgnore>
                         <runOrder>Alphabetical</runOrder>
                    <!-- <rerunFailingTestsCount>1</rerunFailingTestsCount> -->

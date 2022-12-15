@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
                  // tanımlanmamış step i görmek istediğimizde testi çalıştırmaz sadece tanımsız step i verir.
                  // kullanılacağı zaman true alma gerekir, tanımlanmamış step yoksa testi çalıştırmaz
-        tags = "@rerun"
+        tags = "@wip"
                 // feature de oluşturduğumuz senaryoya tag oluşturup burda o tag çağırabiliyoruz ve sadece o çalışır.
                 // biz aynı tag ı bir kaç senaryonun üzerine koyarsak burda o tag ı çağırır ve hepsini çalıştırırız
                 // "@Mike and @smoke" dersek her ikiside olanı, "@Mike or @smoke" desek senaryoda hangisini bulursa onu çalıştırır
