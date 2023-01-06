@@ -13,12 +13,13 @@ public abstract class BasePage {
     public BasePage(){
         PageFactory.initElements(Driver.get(),this);
         driver= Driver.get();
+        // diğer pagelerin içindeki locatorları ve metotları kullanılabilir hale getiriyor.
+        // @FindBy bunun sayesinde okunabiliyor.
     }
 
     public void naviagateToTab2(String tabName){
         driver=Driver.get();
         driver.findElement(By.xpath("//nav//span[.='"+tabName+"']")).click();
-
 
     }
 
